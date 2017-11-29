@@ -1,11 +1,10 @@
 {
-  "name": "sample_mean_app",
+  "name": "bw_stats",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.15.2",
-    "bower": "^1.7.9",
     "express": "latest",
     "gulp": "^3.9.1",
     "gulp-less": "^3.1.0",
@@ -20,7 +19,6 @@
     "gulp-nodemon": "^2.1.0"
   },
   "scripts": {
-    "postinstall": "bower install",
     "prestart": "gulp css",
     "start": "gulp start"
   }
