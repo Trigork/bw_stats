@@ -10,20 +10,28 @@ def extract_stats(statline):
     s = statline.split(',')
     return (s[0],s[3],s[4],s[5])
 
+# Server providing usage DB, use localhost if this will run on the router itself
 server = 'http://router.lan/usage/'
 usage_file = 'usage.db'
+
+# Absolute route to the stats DB file
 usage_db = '/var/www/html/netstats/stats.json'
 tmax_stored = 2592000000
+
+# Check if stats DB file exists, if not, create it with "[]"
+try:
+    f = open(usage_db, 'r')
+except IOError:
+    f = open(usage_db, 'w')
+    f.write("[]")
 
 while True:
     try:
         response = urllib2.urlopen(server+usage_file)
     except urllib2.HTTPError as e:
-        print "NOT FOUND"
-	continue
+        continue
     except urllib2.URLError as e:
-	print "BAD URL"
-	continue
+        continue
 
     timems = int(round(time.time() * 1000))
 
