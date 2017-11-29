@@ -25,8 +25,10 @@ realtime bandwith usage graphs.
 
 ## Installation
 After setting up wrtbwmon and scheduling the task to publish the usage every 5
-seconds, just copy the latest release of bw_stats to your router or server
-and make it available from any html server running within it.
+seconds (luci-app-wrtbwmon already does this for you, so you don't have to do it)
+and making usage.db available with a symlink to /www/, just copy the latest
+release of bw_stats to your router or server and make it available from any html 
+server running within it.
 
 Modify the db/log_usage.py file variables to set the stats.json and usage.db
 locations.
