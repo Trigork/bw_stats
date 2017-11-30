@@ -19,7 +19,7 @@
     "gulp-nodemon": "^2.1.0"
   },
   "scripts": {
-    "prestart": "gulp css",
+    "prestart": "gulp css export_libs export_fonts",
     "start": "gulp start"
   }
 }
